@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +18,7 @@ import org.json.JSONObject;
 
 public class UserActivity extends AppCompatActivity {
 
-    TextView responsetxt,nametextview,IDtextview,emailtextview,tvUserId;
+    TextView nametextview,IDtextview,emailtextview;
 
 
     @SuppressLint("MissingInflatedId")
@@ -28,11 +29,9 @@ public class UserActivity extends AppCompatActivity {
         IDtextview = findViewById(R.id.textViewId);
         nametextview = findViewById(R.id.textViewName);
         emailtextview = findViewById(R.id.textViewEmail);
-        tvUserId = findViewById(R.id.iduser);
 
-        responsetxt = findViewById(R.id.xmltext);
         String xmlrep = getIntent().getStringExtra("xmlresponse");
-        responsetxt.setText(xmlrep);
+
 
         try {
             // Parse the JSON string
@@ -54,11 +53,12 @@ public class UserActivity extends AppCompatActivity {
                 emailtextview.setText("Email: " + email);
             } else {
                 // Handle case where success is false
-                tvUserId.setText("Error: Failed to fetch user data.");
+                Toast.makeText(UserActivity.this, "Error: Failed to fetch user data.", Toast.LENGTH_SHORT).show();
             }
         } catch (JSONException e) {
             e.printStackTrace();
-            tvUserId.setText("Error: Failed to parse JSON.");
+
+            Toast.makeText(UserActivity.this, "Error: Failed to parse JSON.", Toast.LENGTH_SHORT).show();
         }
     }
 

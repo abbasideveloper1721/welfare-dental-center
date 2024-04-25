@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/bg"
     tools:context=".UserActivity">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID"
+        android:textColor="@color/white"
         android:textSize="18sp"/>
 
     <TextView
@@ -19,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name"
+        android:textColor="@color/white"
         android:textSize="18sp" />
 
     <TextView
@@ -26,16 +29,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
+        android:textColor="@color/white"
         android:textSize="18sp" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/xmltext"
-        android:text="respnse"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="user ID"
-        android:id="@+id/iduser"/>
+
+
 
 </LinearLayout>
