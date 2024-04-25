@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        tvres = findViewById(R.id.resview);
+
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +64,12 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-                        tvres.setText(response);
+                        result = response;
+                        Intent xmlintent = new Intent(LoginActivity.this,UserActivity.class);
+                        xmlintent.putExtra("xmlresponse",response);
+                        startActivity(xmlintent);
+
+
 
 
 
