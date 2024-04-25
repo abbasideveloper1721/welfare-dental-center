@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -33,6 +34,9 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     String result;
 
+    TextView tvres;
+
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        tvres = findViewById(R.id.resview);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,20 +57,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void performLogin(final String email, final String password) {
-        String url = "https://auctioned.000webhostapp.com/logindb.php"; // URL of your PHP login script
+        String url = "https://auctioned.000webhostapp.com/loginjson.php"; // URL of your PHP login script
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        result = response.toString();
-                        if (result.equals("Login successful!")){
-                            Toast.makeText(LoginActivity.this, "Response: " + response, Toast.LENGTH_SHORT).show();
-                            Intent uact = new Intent(LoginActivity.this,UserActivity.class);
-                            startActivity(uact);
-                        }else if(result.equals("Invalid password!")){
-                            Toast.makeText(LoginActivity.this, "Password incorrect", Toast.LENGTH_SHORT).show();
-                        }
+
+                        tvres.setText(response);
+
+
 
                     }
                 },

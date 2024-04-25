@@ -48,4 +48,10 @@
         android:backgroundTint="#330000FF"
         android:textColor="#FFF"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white"
+        android:id="@+id/resview"/>
+
 </RelativeLayout>
