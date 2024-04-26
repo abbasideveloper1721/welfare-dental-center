@@ -8,18 +8,64 @@
     android:background="@drawable/bg"
     tools:context=".UserActivity">
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    >
 
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name"
+        android:textAlignment="center"
+        android:layout_weight="1"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/textlogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="logo"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/textlogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textAlignment="center"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       >
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:text="Time"
+           android:id="@+id/timefeild"
+           android:layout_gravity="center"
+           android:layout_marginStart="10dp"
+           android:textColor="@color/white"
+           android:textSize="18dp">
+
+       </TextView>
 
 
+
+   </LinearLayout>
 
 
 </LinearLayout>

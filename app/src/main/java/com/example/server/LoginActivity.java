@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     String result;
 
-    TextView tvres;
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {

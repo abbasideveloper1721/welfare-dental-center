@@ -16,9 +16,13 @@ import androidx.core.view.WindowInsetsCompat;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class UserActivity extends AppCompatActivity {
 
-    TextView nametextview,IDtextview,emailtextview;
+    TextView nametextview,IDtextview,emailtextview,timetextbox;
+    ;
 
 
 
@@ -28,6 +32,11 @@ public class UserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
         nametextview = findViewById(R.id.textViewName);
+        timetextbox = findViewById(R.id.timefeild);
+
+        Date datecurrent = Calendar.getInstance().getTime();
+        timetextbox.setText(datecurrent.toString());
+
         String xmlrep = getIntent().getStringExtra("xmlresponse");
 
 
@@ -47,7 +56,7 @@ public class UserActivity extends AppCompatActivity {
 
                 // Set the extracted data to TextViews
 
-                nametextview.setText("Welcome" + name);
+                nametextview.setText("Welcome " + name);
 
                 ;
             } else {
