@@ -8,13 +8,7 @@
     android:background="@drawable/bg"
     tools:context=".UserActivity">
 
-    <TextView
-        android:id="@+id/textViewId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ID"
-        android:textColor="@color/white"
-        android:textSize="18sp"/>
+
 
     <TextView
         android:id="@+id/textViewName"
@@ -24,13 +18,7 @@
         android:textColor="@color/white"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textViewEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+
 
 
 

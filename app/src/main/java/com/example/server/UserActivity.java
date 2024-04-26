@@ -21,15 +21,13 @@ public class UserActivity extends AppCompatActivity {
     TextView nametextview,IDtextview,emailtextview;
 
 
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
-        IDtextview = findViewById(R.id.textViewId);
         nametextview = findViewById(R.id.textViewName);
-        emailtextview = findViewById(R.id.textViewEmail);
-
         String xmlrep = getIntent().getStringExtra("xmlresponse");
 
 
@@ -48,9 +46,10 @@ public class UserActivity extends AppCompatActivity {
                 String email = userInfo.getString("email");
 
                 // Set the extracted data to TextViews
-                IDtextview.setText("ID: " + id);
-                nametextview.setText("Name: " + name);
-                emailtextview.setText("Email: " + email);
+
+                nametextview.setText("Welcome" + name);
+
+                ;
             } else {
                 // Handle case where success is false
                 Toast.makeText(UserActivity.this, "Error: Failed to fetch user data.", Toast.LENGTH_SHORT).show();
